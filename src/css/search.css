@@ -1,0 +1,127 @@
+.search-wrap {
+    position:fixed;
+    z-index: 66;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height:3.417rem;
+    background-color: #fff;
+}
+.search-wrap .header-back {
+    position: absolute;
+    top: 1rem;
+    left: 0.875rem;
+    width: 1.4rem;
+    height: 1.4rem;
+    background: url(../m-images/header-back.png) no-repeat center / 1.3rem 1.3rem;
+}
+.search-wrap .search-main {
+    position: relative;
+    max-width: 640px;
+    margin: 0 auto;
+}
+.search-wrap .search-box {
+    position: absolute;
+    left: 3rem;
+    top: .56rem;
+    width: 21rem;
+    height: 2.292rem;
+    background: #f4f4f4;
+    border-radius: 4px;
+}
+.search-wrap .search {
+    width: 80%;
+    margin-top: .4rem;
+    margin-left: 1rem;
+    height: 1.6rem;
+    line-height: 1.6rem;
+    border:none;
+    background: #f4f4f4;
+}
+.search-wrap .search-btn {
+    float: right;
+    margin-right: .8rem;
+    margin-top: 1.2rem;
+    width: 1.167rem;
+    height: 1.167rem;
+    background: url(../m-images/icon2.png) no-repeat 0 0;
+    background-size:400px 400px;
+    vertical-align: middle;
+}
+.search-wrap .response-box {
+    position: absolute;
+    left: 0;
+    top: 3.417rem;
+    width: 100%;
+    background-color: #fff;
+}
+.search-wrap .response-box li {
+    padding-left: 1rem;
+    border-bottom: 1px solid #ebebeb;
+}
+.search-wrap .response-box a {
+    display: block;
+    line-height: 2.708rem;
+    color: #000;
+}
+.search-wrap .empty-search {
+    float: right;
+    margin-top: .5rem;
+    margin-right: 1rem;
+    width: 1.4rem;
+    height: 1.4rem;
+    background:  url(../m-images/icon2.png) no-repeat 0 -3.958rem;
+    background-size: 33.333rem 33.333rem;
+}
+/*搜索框结束*/
+
+/*热门搜索开始*/
+.hot-search {
+    padding: 4.417rem 1rem 1rem;
+    background-color: #fff;
+}
+.hot-search .hot-items li {
+    float: left;
+    margin: 10px 10px 0 0;
+}
+.hot-search .hot-items a {
+    display: block;
+    padding: 5px 10px;
+    line-height: 1.2rem;
+    background-color: #f1f1f1;
+    color: #3b3b3b;
+    border-radius: 3px;
+}
+/*热门搜索结束*/
+
+/*历史记录开始*/
+.history {
+    margin-top: 0.708rem;
+    background-color: #fff;
+}
+.history .history-header {
+    padding: 0 1rem;
+    line-height: 3.125rem;
+    border-bottom: 1px solid #ebebeb;
+}
+.history .empty-history {
+    float: right;
+    margin-top: 0.833rem;
+    padding: 0.208rem 0.417rem;
+    color:#b3b3b3;
+    line-height: 1;
+    border:1px solid #b3b3b3;
+    border-radius: 2px;
+}
+.history .history-items {
+    padding-left: 1rem;
+}
+.history .history-items li {
+    line-height: 2.5rem;
+    border-bottom: 1px solid #ebebeb;
+}
+.history .history-items a {
+    display: block;
+    color: #3b3b3b;
+}
+/*历史记录结束*/

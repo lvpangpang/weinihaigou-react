@@ -1,0 +1,108 @@
+.swiper-container1 {
+    margin-top: 3.5rem;
+}
+/*nav开始*/
+.nav {
+    display: -webkit-flex;
+    -webkit-justify-content:space-around;
+    justify-content: space-around;
+    -webkit-align-items:center;
+    align-items: center;
+    padding: 0.75rem 0;
+    background-color: #fff;
+    border-bottom: 1px solid #ebebeb;
+}
+.nav .nav-item {
+    width: 25%;
+    text-align: center;
+    color: #000;
+}
+.nav img {
+    display: block;
+    margin: 0 auto .25rem;
+    width: 2.083rem;
+}
+/*nav结束*/
+
+/*热门推荐开始*/
+.global-selection {
+    margin-bottom: 55px;
+}
+.flash-sale,
+.hot,
+.global-selection {
+    margin-top:17px;
+    background-color: #fff;
+    border-top: 1px solid #ebebeb;
+    background-color: #fff;
+}
+.flash-sale h2,
+.hot h2,
+.global-selection h2 {
+    height: 3.125rem;
+    text-align: center;
+    font-size: 1.167rem;
+    border-bottom: 1px solid #ebebeb;
+    color: #f2f2f2;
+    font-size: 1.667rem;
+}
+.flash-sale .no-bottom {
+    border-bottom: none;
+}
+.flash-sale h2 a,
+.hot h2 a,
+.global-selection h2 a {
+    display: block;
+    width: 10rem;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    color: #f2f2f2;
+}
+.explan,
+.no-explan {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0.833rem;
+    margin: auto;
+    min-width: 5.708rem;
+    font-size: 1.3rem;
+    color: #000;
+}
+.explan:after {
+    content:'';
+    display: inline-block;
+    margin-left: .5rem;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-left: 7px solid #1c1b21;
+    border-bottom: 5px solid transparent;
+}
+.hot li {
+    float: left;
+    width: 50%;
+    height: 5.75rem;
+    padding: .25rem 0;
+    margin-left: -1px;
+    border-left: 1px solid #ebebeb;
+    border-bottom: 1px solid #ebebeb;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    overflow:hidden;
+}
+.hot li a {
+    display: block;
+    height: 100%;
+    overflow:hidden;
+    background-color: #fff;
+}
+.hot li a img {
+    display: block;
+    margin:0 auto;
+    width: 99%;
+    height: 100%;
+}
+/*热门推荐结束*/
