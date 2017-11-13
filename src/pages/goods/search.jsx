@@ -230,12 +230,12 @@ export default class Search extends Component {
                         <div className="search-box">
                             <input type="text"  placeholder={this.state.linkContent} value={this.state.searchKey} onChange={this.searchKeyChange}  className="search" />
                             {
-                               this.state.searchKey !== '' && <a href=":;" className="empty-search" onClick={this.clearSearch}></a>       
+                               this.state.searchKey !== '' && <a className="empty-search" onClick={this.clearSearch}></a>       
                             }
                         </div>
-                        <a href=":;" className="search-btn" onClick={this.go}></a>
+                        <a className="search-btn" onClick={this.go}></a>
                         <ul className="response-box" v-if="responseList.length">
-                            <li v-for="data in responseList" track-by="window.$index"><a href=":;"  v-html="data" onClick={this.go}></a></li>
+                            <li v-for="data in responseList" track-by="window.$index"><a  v-html="data" onClick={this.go}></a></li>
                         </ul>
                     </div>
                 </div>

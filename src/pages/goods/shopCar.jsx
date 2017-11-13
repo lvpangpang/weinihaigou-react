@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import store from '@/store/index';
 import { Link } from 'react-router-dom';
-import $ from 'jquery';
-import numControl from '@/component/numControl';
 import ComLoading from '@/component/comLoading';
 import Toast from '@/component/toast';
 import NumControl from '@/component/numControl';

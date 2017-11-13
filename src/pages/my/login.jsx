@@ -139,7 +139,7 @@ export default class Login extends Component {
                     back='false'
                 />
                 <div className="login-header">
-                    <img src="../m-images/login-bg.jpg" />
+                    <img src="../m-images/login-bg.jpg" alt="" />
                 </div>
                 <div className="login-main">
                     <div className="phone-pwd">
@@ -150,7 +150,7 @@ export default class Login extends Component {
                             <input type="password" placeholder="请输入密码" value={this.state.password.value} onChange={this.handle2} />
                         </div>
                     </div>
-                    <a href="javascript:;" className="com-next" onClick={this.login} className={ (this.state.mobile.value==='' || this.state.password.value==='') ? 'com-next unable' : 'com-next'}>登录</a>
+                    <a onClick={this.login} className={ (this.state.mobile.value==='' || this.state.password.value==='') ? 'com-next unable' : 'com-next'}>登录</a>
                     <p className="register-back">
                         <Link to="register" className="com-color">注册账号</Link>
                     </p>

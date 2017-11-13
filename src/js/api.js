@@ -34,7 +34,6 @@ const API = {
     getIntervalPrice : pxy + '/goods/getIntervalPrice.shtml',
     ifCollect : pxy + '/person/ifCollect.shtml',
     insertCollect : pxy + '/person/insertCollect.shtml',
-    addShopCar : pxy + '/trade/addShopCar.shtml',
     drawCoupon : pxy + '/goods/drawCoupon.shtml',
     carCount : pxy + '/carCount.shtml',
 
@@ -46,14 +45,10 @@ const API = {
 
     // 确认订单相关
     createOrder : pxy + 'trade/createOrder.shtml',
-    toPay : pxy + '/trade/toPay.shtml',
     saveUserDetail : pxy + '/person/saveUserDetail.shtml',
 
     // 订单相关
     orderMo : pxy + '/ord/orderMo.shtml',
-    delTrade : pxy + '/ord/delTrade.shtml',
-    updateTrade : pxy + '/trade/updateTrade.shtml',
-    updateStatus : pxy + '/ord/updateStatus.shtml',
 
     // 订单详情相关
     tradeMoDetail : pxy + '/ord/tradeMoDetail.shtml',

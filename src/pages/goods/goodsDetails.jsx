@@ -116,7 +116,6 @@ export default class GoodsDetails extends Component {
         };
 
         this.detailMo = () => {
-            var oThis = this;
             window.axios.post( window.API.detailMo, window.commonMethods.param({goodsNo : this.state.goodsNo}) ).then( ( data ) => {
                 var data1 = data.data;
                 this.setState({
@@ -181,7 +180,7 @@ export default class GoodsDetails extends Component {
                     });
                 }
             });
-        },
+        };
 
         this.insertCollect = () => {
             window.axios.post( window.API.insertCollect, window.commonMethods.param({goodsId : this.state.goodsDetail.goodsId}) ).then( ( data ) => {
@@ -247,16 +246,14 @@ export default class GoodsDetails extends Component {
             switch (code) {
                 case '1' :
                     return '保税区邮'
-                    break;
                 case '2' :
                     return '香港直邮'
-                    break;
                 case '4' :
                     return '海外直邮'
-                    break;
                 case '5' :
                     return '国内发货'
-                    break;
+                default : 
+                    return '国内发货'                
             }
         };
 
@@ -328,7 +325,7 @@ export default class GoodsDetails extends Component {
                             {
                                 this.state.imgShowList.map((data, index, arr) => {
                                     return (
-                                        <div key={index} className="swiper-slide"><a href="javascript:;"><img src={data.imgUrl} alt="" /></a></div>
+                                        <div key={index} className="swiper-slide"><a><img src={data.imgUrl} alt="" /></a></div>
                                     );
                                 })
                             }
@@ -362,7 +359,7 @@ export default class GoodsDetails extends Component {
                     </div>
                 </div>
                 <div className="goods-prams">
-                    <a href="javascript:;" className="clearfix instruction">
+                    <a className="clearfix instruction">
                         <div className="prams-header"><span>说明：</span></div>
                         <div className="prams-con">
                             <span className="red-mark">商品税费</span>
@@ -392,7 +389,7 @@ export default class GoodsDetails extends Component {
                     }
         
                     <div className="brand-img">
-                        <img src={this.state.goodsDetail.brandLogo}  width="100%" />
+                        <img src={this.state.goodsDetail.brandLogo}  width="100%" alt/>
                     </div>
                     <div className="see-brand">
                         <Link to={`goodsResult?brandId=${this.state.goodsDetail.brandId}&brandName=${this.state.goodsDetail.brandName}`}>查看该品牌所有单品></Link>
@@ -403,16 +400,16 @@ export default class GoodsDetails extends Component {
                     {
                         this.state.imgList.map( (data, index, arr)=> {
                             return(
-                                <img key={index} data-src={data.imgUrl} width="100%"  height="100%" />
+                                <img key={index} data-src={data.imgUrl} width="100%"  height="100%" alt/>
                             );
                         })
                     }
                 </div>
                 <div className="goods-footer">
-                    <a href="javascript:;" className="custom">客服</a>
-                    <a href="javascript:;" className={this.state.hasColltion ? 'collection' : 'collect no-collection'} onClick={this.addCollect}>收藏</a>
-                    <a href="javascript:;" className="add-shop" onClick={this.goShopCar}>加入购物车</a>
-                    <a href="javascript:;" className="buy" onClick={this.goBuy}>立即购买</a>
+                    <a className="custom">客服</a>
+                    <a className={this.state.hasColltion ? 'collection' : 'collect no-collection'} onClick={this.addCollect}>收藏</a>
+                    <a className="add-shop" onClick={this.goShopCar}>加入购物车</a>
+                    <a className="buy" onClick={this.goBuy}>立即购买</a>
                 </div>
 
                 <div className="sku-box">
@@ -460,7 +457,7 @@ export default class GoodsDetails extends Component {
                                     {
                                         this.state.goodsDetails.map((data, index, arr) => {
                                             return(
-                                                 <a key={index} href="javascript:;"  skuid={data.skuId} skuno={data.skuNo} className={index===0?'active':''}>{data.skuName}</a>
+                                                 <a key={index}  skuid={data.skuId} skuno={data.skuNo} className={index===0?'active':''}>{data.skuName}</a>
                                             )
                                         })
                                     }
@@ -478,7 +475,6 @@ export default class GoodsDetails extends Component {
                         </div>
 
                         <a 
-                            href="javascript:;" 
                             className={(this.state.showSku.count<=0||this.state.showSku.status!=='1') ? 'sure-add-buy no-num-buy': 'sure-add-buy'} 
                             onClick={this.goSure}
                         >
@@ -490,7 +486,7 @@ export default class GoodsDetails extends Component {
                 <div className="instruction-box">
                     <div className="box-bg"></div>
                     <div className={ this.state.showInstBox ?  'instruction-main show' : 'instruction-main'}>
-                        <h2>商品说明<a href="javascript:;" className="box-close"></a></h2>
+                        <h2>商品说明<a  className="box-close"></a></h2>
                         <div className="instru-item">
                             <dl>
                                 <dt><i></i>商品税费</dt>

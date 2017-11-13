@@ -27,7 +27,7 @@ export default class order extends Component {
             .then((data) => {
                 console.log(data.data);
                 var data1 = data.data;
-                if (data1.message == true) {
+                if ( data1.message === true ) {
                     this.setState({
                         orderTrades : data1.orderTrades,
                         isLoading : false
@@ -58,7 +58,6 @@ export default class order extends Component {
         this.qxOrder = (tradeNo) => {
             window.axios.post(window.API.updateTrade, window.commonMethods.param({tradeNo : tradeNo}))
             .then((data) => {
-                var data1 = data.data;
                 this.getOrder(this.state.type);
             });
         };
@@ -66,7 +65,6 @@ export default class order extends Component {
         this.takeOrder = (tradeId) => {
             window.axios.post(window.API.updateStatus, window.commonMethods.param({tradeId : tradeId}))
             .then((data) => {
-                var data1 = data.data;
                 this.getOrder(this.state.type);
             });
         };
@@ -87,22 +85,18 @@ export default class order extends Component {
             switch (tradeStatus) {
                 case '0' :
                     return '交易关闭'
-                    break;
                 case '1' :
                     return '等待付款'
-                    break;
                 case '2' :
                     return '待发货'
-                    break;
                 case '5' :
                     return '待发货'
-                    break;
                 case '7' :
                     return '已发货'
-                    break;
                 case '11' :
                     return '交易成功'
-                    break;
+                default : 
+                    return '交易成功' 
             }
         };
     }
@@ -116,11 +110,11 @@ export default class order extends Component {
             <div className="com-body3">
                 <ComNavigation headerName="我的订单" back="true"></ComNavigation>
                 <div className="order-header">
-                    <a href="javascript:;" onClick={this.getOrder.bind(this, 0)} className={ this.state.type===0 ? 'active' : '' }>全部</a>
-                    <a href="javascript:;" onClick={this.getOrder.bind(this, 1)} className={ this.state.type===1 ? 'active' : '' }>待付款</a>
-                    <a href="javascript:;" onClick={this.getOrder.bind(this, 2)} className={ this.state.type===2 ? 'active' : '' }>待发货</a>
-                    <a href="javascript:;" onClick={this.getOrder.bind(this, 3)} className={ this.state.type===3 ? 'active' : '' }>待收货</a>
-                    <a href="javascript:;" onClick={this.getOrder.bind(this, 4)} className={ this.state.type===4 ? 'active' : '' }>已完成</a>
+                    <a  onClick={this.getOrder.bind(this, 0)} className={ this.state.type===0 ? 'active' : '' }>全部</a>
+                    <a  onClick={this.getOrder.bind(this, 1)} className={ this.state.type===1 ? 'active' : '' }>待付款</a>
+                    <a  onClick={this.getOrder.bind(this, 2)} className={ this.state.type===2 ? 'active' : '' }>待发货</a>
+                    <a  onClick={this.getOrder.bind(this, 3)} className={ this.state.type===3 ? 'active' : '' }>待收货</a>
+                    <a  onClick={this.getOrder.bind(this, 4)} className={ this.state.type===4 ? 'active' : '' }>已完成</a>
                 </div>
                 <div className="order-con">
                     {
@@ -133,7 +127,7 @@ export default class order extends Component {
                                         <span className="order-color">{this.getTradeStatus(data.tradeStatus)}</span>
                                         {
                                             (data.tradeStatus===1||data.tradeStatus===11||data.tradeStatus===0) && 
-                                            <a href="javascript:;" onClick={this.delOrder(data.tradeId)} className="delete"></a>
+                                            <a  onClick={this.delOrder(data.tradeId)} className="delete"></a>
                                         }
                                     </div>
                                     </div>
@@ -172,7 +166,7 @@ export default class order extends Component {
                                         data.tradeStatus==='1' 
                                         && 
                                         <div className="make-box">
-                                            <a href="javascript:;" onClick={this.qxOrder(data.tradeNo)}>取消订单</a>
+                                            <a  onClick={this.qxOrder(data.tradeNo)}>取消订单</a>
                                             <Link to={'orderDetails?tradeNo=' + data.tradeNo} className="red">去付款</Link>
                                         </div>
                                     }
@@ -182,7 +176,7 @@ export default class order extends Component {
                                         && 
                                         <div className="make-box">
                                             <Link to={'logistics?logistid=' + data.logistid +'&postId=' + data.postId } className="red">去付款</Link>
-                                            <a href="javascript:;" onClick={this.takeOrder(data.tradeId)}  className="red">确认收货</a>
+                                            <a  onClick={this.takeOrder(data.tradeId)}  className="red">确认收货</a>
                                         </div>
                                     }
                                 </div>

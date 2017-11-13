@@ -210,19 +210,19 @@ export default class GoodsResult extends Component {
                 {/*排序类型*/}
                 <div className="goods-sort-box">
                     <div className="com-goods-sort">
-                        <a href="javascript:;" 
+                        <a  
                             className={ this.state.queryParams.sort==='xl' ? 'items down' : 'items'} 
                             onClick={ this.setXl }
                         >销量</a>
-                        <a href="javascript:;" 
+                        <a  
                             onClick={this.setSj} 
                             className={ this.setStyle('sj') }
                         >售价</a>
-                        <a href="javascript:;"
+                        <a 
                             onClick={this.setKc}
                             className={ this.setStyle('kc') }                            
                         >库存量</a>
-                        <a href="javascript:;"
+                        <a 
                             onClick={this.setSjsj}
                             className={ this.setStyle('sjsj') }                            
                         >上架时间</a>

@@ -32,7 +32,6 @@ export default class SurePay extends Component {
         };
 
         this.getPayInfo = () => {
-            var oThis = this;
             window.axios.post(window.API.toMoPalaceOrder).then( ( data ) => {
                 var data1 = data.data;
                 if (data1.success) {
@@ -56,8 +55,7 @@ export default class SurePay extends Component {
         };
 
         this.goOrder = () => {
-            var str = "",
-                adrList = this.state.addrList,
+            var adrList = this.state.addrList,
                 addressId = "",
                 isSelect = 0,
                 couponId = this.state.cou_flag,
@@ -276,12 +274,12 @@ export default class SurePay extends Component {
                         {
                             !window.commonMethods.checkIsWx() 
                             ?
-                            <a href="javascript:;" className="zfb active">
+                            <a  className="zfb active">
                                 <span>支付宝</span>
                                 <i></i>
                             </a>
                             :
-                            <a href="javascript:;" className="wx active">
+                            <a  className="wx active">
                                 <span>微信</span>
                                 <i></i>
                             </a>
@@ -290,7 +288,7 @@ export default class SurePay extends Component {
                 </div>
                 <div className="pay-footer">
                     <div className="all-money">共计:<span>¥<span>{this.state.relMoney.toFixed(2)}</span></span></div>
-                    <a href="javascript:;" onClick={this.goOrder} className="pay-btn">确认并付款</a>
+                    <a  onClick={this.goOrder} className="pay-btn">确认并付款</a>
                 </div>
 
                 {/*实名认证弹框*/}
@@ -299,13 +297,13 @@ export default class SurePay extends Component {
                     <div className="real-main">
                         <div className="real-header">
                             <span>实名认证</span>
-                            <a href="javascript:;" className="close"></a>
+                            <a  className="close"></a>
                         </div>
                         <div className="real-con">
                             <input type="text" name="" className="real-name" placeholder="您的真实姓名" v-model="name" />
                             <input type="text" name="" className="real-crad-no"  placeholder="您的身份证号码（将加密处理）" v-model="cardId" />
                             <p className="tips-box">备注: 海关要求购买跨境商品需提供实名信息哦！</p>
-                            <a href="javascript:;" className="sub-btn" onClick={this.geTorealName}>完成</a>
+                            <a  className="sub-btn" onClick={this.geTorealName}>完成</a>
                         </div>
                     </div>
                 </div>
