@@ -540,7 +540,7 @@ export default class ShopCar extends Component {
                 <div className="header clearfix">
                     {
                         store.getState().reducer.carCount &&
-                        <a href="javascript:;" className="edit" onClick={this.edit}>
+                        <a className="edit" onClick={this.edit}>
                             {
                                 !this.state.isEditting ? <span>编辑</span> : <span>完成</span>
                             }
@@ -590,13 +590,13 @@ export default class ShopCar extends Component {
                                                         {
                                                             (c.isShow && c.status && c.realStock > 0)
                                                             ?
-                                                            <a href="javascript:;" onClick={this.choose.bind(this, index1, index2)} 
+                                                            <a onClick={this.choose.bind(this, index1, index2)} 
                                                                 className={ c.selected ? "choose checkbox" : "checkbox" }>
                                                                 <input type="checkbox" />
                                                                 <i></i>
                                                             </a>
                                                             :
-                                                            <a href="javascript:;" className="checkbox1">
+                                                            <a className="checkbox1">
                                                                 <input type="checkbox" />
                                                                 <i></i>
                                                             </a>
@@ -638,7 +638,7 @@ export default class ShopCar extends Component {
                                                                     this.state.isEditting
                                                                     ?
                                                                     <div className="delete-box" >
-                                                                        <a href="javascript:;" className="delete" onClick={this.deleteCar.bind(this, c.cartId+'')}>删除</a>
+                                                                        <a className="delete" onClick={this.deleteCar.bind(this, c.cartId+'')}>删除</a>
                                                                     </div>
                                                                     :
 
@@ -650,12 +650,12 @@ export default class ShopCar extends Component {
                                                                     >
                                                                     </NumControl>
                                                                 }
-                                                                <a href="javascript:;" className="tax down"><span>税费：</span><span>¥<span className="each-tax">{c.goodsTax}</span></span><i></i></a>
+                                                                <a className="tax down"><span>税费：</span><span>¥<span className="each-tax">{c.goodsTax}</span></span><i></i></a>
                                                             </div>
                                                             :
                                                             <div className="num-box" v-else>
                                                                 <div className="">
-                                                                    <a href="javascript:;" className="delete" onClick={this.deleteCar.bind(this, c.cartId)}>删除</a>
+                                                                    <a className="delete" onClick={this.deleteCar.bind(this, c.cartId)}>删除</a>
                                                                 </div>
                                                             </div>
                                                         }
@@ -698,7 +698,7 @@ export default class ShopCar extends Component {
                     <div className="settle-accounts">
                         <div className="makes-box">
                             <div className="all-choose-box">
-                                <a  href="javascript:;" className={this.state.selected ? 'checkbox com-choose choose' : 'checkbox com-choose'}  onClick={this.chooseAll}>
+                                <a className={this.state.selected ? 'checkbox com-choose choose' : 'checkbox com-choose'}  onClick={this.chooseAll}>
                                     <input type="checkbox"/>
                                     <i></i>全选
                                 </a>
@@ -717,7 +717,7 @@ export default class ShopCar extends Component {
                                 </p>
                             </div>
                         </div>
-                        <a href="javascript:;" className="make-btn" onClick={this.goPay}>去结算</a>
+                        <a className="make-btn" onClick={this.goPay}>去结算</a>
                     </div>
                 }
 
@@ -727,13 +727,13 @@ export default class ShopCar extends Component {
                     <div className="settle-accounts">
                         <div className="makes-box">
                             <div className="all-choose-box">
-                                <a  href="javascript:;" className={ this.state.selected ? 'checkbox com-choose choose' : 'checkbox com-choose'}  onClick={this.chooseAll}>
+                                <a className={ this.state.selected ? 'checkbox com-choose choose' : 'checkbox com-choose'}  onClick={this.chooseAll}>
                                     <input type="checkbox"/>
                                     <i></i>全选
                                 </a>
                             </div>
                         </div>
-                        <a href="javascript:;" className="make-btn" onClick={this.deleteCar}>删除</a>
+                        <a className="make-btn" onClick={this.deleteCar}>删除</a>
                     </div>   
                 }
 

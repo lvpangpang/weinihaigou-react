@@ -389,7 +389,7 @@ export default class GoodsDetails extends Component {
                     }
         
                     <div className="brand-img">
-                        <img src={this.state.goodsDetail.brandLogo}  width="100%" alt/>
+                        <img src={this.state.goodsDetail.brandLogo}  width="100%" alt=""/>
                     </div>
                     <div className="see-brand">
                         <Link to={`goodsResult?brandId=${this.state.goodsDetail.brandId}&brandName=${this.state.goodsDetail.brandName}`}>查看该品牌所有单品></Link>
@@ -400,7 +400,7 @@ export default class GoodsDetails extends Component {
                     {
                         this.state.imgList.map( (data, index, arr)=> {
                             return(
-                                <img key={index} data-src={data.imgUrl} width="100%"  height="100%" alt/>
+                                <img key={index} data-src={data.imgUrl} width="100%"  height="100%" alt=""/>
                             );
                         })
                     }
