@@ -216,10 +216,10 @@ export default class ShopCar extends Component {
                     type3 : 多少件多少元(2件99，取该活动被选中商品中价格最高(单价)的2件参加活动，其他的不参加)*/
                     item.amount1 = item.amount - goodsMoney;
                     item.goodsNum = item.amount - goodsNum;
-                    if ( (item.couponPolicyType == 1 && item.amount1<=0) || ( item.couponPolicyType == 2 && item.goodsNum <=0 ) ) {
+                    if ( (item.couponPolicyType === 1 && item.amount1<=0) || ( item.couponPolicyType === 2 && item.goodsNum <=0 ) ) {
                         item.isMeet = true;
                         discountAmount += item.discount;
-                    } else if ( item.couponPolicyType == 3 && item.goodsNum <= 0 ) {
+                    } else if ( item.couponPolicyType === 3 && item.goodsNum <= 0 ) {
                         item.isMeet = true;
                         goodsList = goodsList.sort( this.compare('skuPrice') );
                         var allNum = 0;
@@ -281,10 +281,10 @@ export default class ShopCar extends Component {
                 item1 = item;
                 item.shopCarList.forEach( ( item, index, arr) => {
                     // 正常状态并且只计算保税区且不是包邮包税的商品
-                    if ( item.saleType == 0 && item.deliveryCode == 1 ) {
+                    if ( item.saleType == 0 && item.deliveryCode === '1' ) {
                         item.goodsTax = item.skuPrice * item.num * item.tax;
                         if ( item1.isMeet ) {
-                            if ( item1.couponPolicyType == 3 ) {
+                            if ( item1.couponPolicyType === 3 ) {
                                 item.goodsTax *= (1 - ( item1.expensiveMoeny - item1.discount )/item1.activityMoney);
                             } else {
                                 item.goodsTax *= (1 - item1.discount/item1.activityMoney);
@@ -322,7 +322,7 @@ export default class ShopCar extends Component {
                 noMailMoney = 0;
             this.state.carList.forEach( ( item, index, arr) => {
                 item.shopCarList.forEach( ( item, index, arr) => {
-                    if ( item.selected && item.deliveryCode == 1 && item.saleType == 0 ) {
+                    if ( item.selected && item.deliveryCode === '1' && item.saleType == 0 ) {
                         noMailMoney += item.skuPrice * item.num;
                     }
                 });
@@ -344,7 +344,7 @@ export default class ShopCar extends Component {
                 item.shopCarList.forEach( ( item, index, arr) => {
                     if ( item.selected ) {
                         selectedGoodsMoney += item.skuPrice * item.num;
-                        if ( item.deliveryCode==1 ) {
+                        if ( item.deliveryCode === '1' ) {
                             selectedBondedMoney += item.skuPrice * item.num;
                         }
                     }
@@ -414,6 +414,7 @@ export default class ShopCar extends Component {
                         isLoading : false
                     });
                     if ( data1.carList ) {
+                        console.log(data1.carList);
                         data1.carList.forEach(function( item, index, arr) {
                             // 如果有活动才手动添加对应属性
                             if ( item.couponPolicyId > 0 ) {
@@ -434,7 +435,7 @@ export default class ShopCar extends Component {
                                     item.num = parseInt(item.num);
                                     item.skuPrice = parseFloat(item.skuPrice);
                                     item.tax = parseFloat(item.tax);
-                                    if ( item.isShow==1 && item.status==1 && item.realStock>0 ) {
+                                    if ( item.isShow===1 && item.status===1 && item.realStock>0 ) {
                                         item.isStatus  = true;
                                     }
                                 });
@@ -510,16 +511,12 @@ export default class ShopCar extends Component {
             switch (code) {
                 case '1' :
                     return '保税区邮'
-                    break;
                 case '2' :
                     return '香港直邮'
-                    break;
                 case '4' :
                     return '海外直邮'
-                    break;
                 case '5' :
                     return '国内发货'
-                    break;
             }
         };
         
@@ -605,7 +602,7 @@ export default class ShopCar extends Component {
                                                         <Link to={`goodsDetails?goodsNo=${c.goodsNo}`}  className="goods-img">
                                                             <img src={c.imgUrl} alt="" />
                                                             {
-                                                                c.isShow==0 || c.status!==1
+                                                                c.isShow===0 || c.status!==1
                                                                 ?
                                                                 <div className={c.isShow===0||c.status!==1? 'no-goods opacity' : 'no-goods'}>已下架</div>
                                                                 :
@@ -738,7 +735,7 @@ export default class ShopCar extends Component {
                 }
 
                 {
-                    store.getState().reducer.carCount==0
+                    store.getState().reducer.carCount===0
                     &&
                     <div className="no-shop">
                         <img src="../m-images/no-shop.png" />
